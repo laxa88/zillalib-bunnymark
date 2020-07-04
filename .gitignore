@@ -16,6 +16,8 @@ Release-vs2013/
 Release-vs2013x64/
 Release-vs2015/
 Release-vs2015x64/
+Debug-vs2019/
+Debug-vs2019x64/
 Debug-linux/
 Release-linux/
 Debug-wasm/
