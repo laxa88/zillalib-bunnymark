@@ -10,6 +10,11 @@ struct BunnyMark {
 	void Init();
 	void Update();
 	void Draw();
+
+	void AddBunnies(int count);
+	void StartAdding();
+	void StopAdding();
+	void Reset();
 };
 
 #endif

@@ -30,7 +30,6 @@ struct sZillaBunnyMark : public ZL_Application
 	{
 		ZL_Display::ClearFill(ZL_Color::Gray);
 		fnt.Draw(8, ZLHEIGHT-8, ZL_String::format("Elapsed: %f\nBunnies: %d", ZLSECONDS, bunny.nBunnies), ZL_Origin::TopLeft);
-		//bunny.Draw();
 	}
 
 	void onPointerDown(ZL_PointerPressEvent& e)

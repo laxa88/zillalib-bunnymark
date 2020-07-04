@@ -13,3 +13,15 @@ void BunnyMark::Update()
 
 void BunnyMark::Draw()
 {}
+
+void BunnyMark::AddBunnies(int count)
+{}
+
+void BunnyMark::StartAdding()
+{}
+
+void BunnyMark::StopAdding()
+{}
+
+void BunnyMark::Reset()
+{}
