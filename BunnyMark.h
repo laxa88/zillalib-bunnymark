@@ -4,17 +4,17 @@
 #define __BUNNYMARK__
 
 struct BunnyMark {
-	ZL_Surface srfBunnyTiles;
-	int nBunnies;
+	static ZL_Surface srfBunnyTiles;
+	static int nBunnies;
 
-	void Init();
-	void Update();
-	void Draw();
+	static void Init();
+	static void Update();
+	static void Draw();
 
-	void AddBunnies(int count);
-	void StartAdding();
-	void StopAdding();
-	void Reset();
+	static void AddBunnies(int count);
+	static void StartAdding();
+	static void StopAdding();
+	static void Reset();
 };
 
 #endif
