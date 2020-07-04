@@ -13,7 +13,6 @@ struct Bunny {
 	ZL_Rectf rectfBounds;
 
 	Bunny(int textureIndex, ZL_Rectf &bounds);
-	~Bunny();
 
 	void Update();
 	void Draw();
