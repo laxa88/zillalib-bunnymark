@@ -4,16 +4,16 @@
 #define __BUNNY__
 
 struct Bunny {
-	Bunny();
-	~Bunny();
-
 	int nSpriteIndex;
-	float gravity;
-	float x;
-	float y;
-	float speedX;
-	float speedY;
-	ZL_Rectf bounds;
+	double dGravity;
+	double dx;
+	double dy;
+	double dSpeedX;
+	double dSpeedY;
+	ZL_Rectf rectfBounds;
+
+	Bunny(int textureIndex, ZL_Rectf &bounds);
+	~Bunny();
 
 	void Update();
 	void Draw();
