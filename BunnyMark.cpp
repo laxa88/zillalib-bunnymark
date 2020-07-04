@@ -9,7 +9,7 @@ int BunnyMark::nCount;
 int BunnyMark::nMaxCount;
 int BunnyMark::nAmount;
 
-void BunnyMark::Init() {
+void BunnyMark::Init(int startBunnyCount) {
 	rectBounds.left = 0.0;
 	rectBounds.top = ZLHEIGHT;
 	rectBounds.right = ZLWIDTH;
@@ -21,10 +21,10 @@ void BunnyMark::Init() {
 
 	srfBunnyTiles = ZL_Surface("Data/lineup.png");
 	srfBunnyTiles.SetTextureFilterMode(false, false);
-	srfBunnyTiles.SetTilesetClipping(12, 0);
+	srfBunnyTiles.SetTilesetClipping(12, 1);
 	nCount = 0;
 
-	// if (startBunnyCount > 0)
+	 if (startBunnyCount > 0)
 	{
 		AddBunnies(100);
 	}
@@ -59,7 +59,7 @@ void BunnyMark::AddBunnies(int count)
 {
 	for (int i = 0; i < count; i++)
     {
-		Bunny bunny{ZL_Rand::Int(12), rectBounds };
+		Bunny bunny{ZL_Rand::Int(11), rectBounds };
 		bunny.dx = (nCount % 2) * 800.0;
 		vecBunnies.push_back(bunny);
 		nCount++;

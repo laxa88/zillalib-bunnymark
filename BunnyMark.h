@@ -14,7 +14,7 @@ struct BunnyMark {
 	static int nMaxCount;
 	static int nAmount;
 
-	static void Init();
+	static void Init(int startBunnyCount);
 	static void Update();
 	static void Draw();
 

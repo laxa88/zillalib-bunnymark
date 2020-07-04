@@ -13,7 +13,7 @@ struct sZillaBunnyMark : public ZL_Application
 		ZL_Display::SetAA(false);
 		ZL_Input::Init();
 
-		BunnyMark::Init();
+		BunnyMark::Init(100);
 
 		fnt = ZL_Font("Data/gbfont.png");
 	}

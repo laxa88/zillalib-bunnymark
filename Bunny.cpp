@@ -2,7 +2,7 @@
 
 Bunny::Bunny(int textureIndex, ZL_Rect &bounds)
 {
-	nSpriteIndex = 0;
+	nSpriteIndex = textureIndex;
 	dGravity = 0.75;
 	dx = 0.0;
 	dy = ZLHEIGHT;
