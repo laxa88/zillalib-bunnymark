@@ -11,7 +11,6 @@ struct sZillaBunnyMark : public ZL_Application
 		ZL_Display::sigPointerDown.connect(this, &sZillaBunnyMark::onPointerDown);
 		ZL_Display::sigPointerUp.connect(this, &sZillaBunnyMark::onPointerUp);
 		ZL_Display::SetAA(false);
-
 		ZL_Input::Init();
 
 		BunnyMark::Init();
@@ -28,15 +27,18 @@ struct sZillaBunnyMark : public ZL_Application
 	{
 		ZL_Display::ClearFill(ZL_Color::Gray);
 		fnt.Draw(8, ZLHEIGHT-8, ZL_String::format("Elapsed: %f\nBunnies: %d", ZLSECONDS, BunnyMark::nCount), ZL_Origin::TopLeft);
+		BunnyMark::Draw();
 	}
 
 	void onPointerDown(ZL_PointerPressEvent& e)
 	{
 		ZL_LOG("DEBUG", "pointer down");
+		BunnyMark::StartAdding();
 	}
 
 	void onPointerUp(ZL_PointerPressEvent& e)
 	{
 		ZL_LOG("DEBUG", "pointer up");
+		BunnyMark::StopAdding();
 	}
 } ZillaBunnyMark;
