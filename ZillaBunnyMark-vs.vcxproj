@@ -42,9 +42,10 @@
   </ItemGroup>
   <Import Project="$(ZillaLibDir)/ZillaApp-vs.props" />
   <ItemGroup>
+    <ClCompile Include="BunnyMark.cpp" />
+    <ClCompile Include="BunnyMark.h" />
     <ClInclude Include="include.h" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="SceneGame.cpp" />
     <ResourceCompile Include="ZillaBunnyMark.rc" />
   </ItemGroup>
 </Project>
