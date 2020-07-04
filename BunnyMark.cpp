@@ -1,4 +1,5 @@
 #include "BunnyMark.h"
+#include "Bunny.h"
 
 void BunnyMark::Init() {
 	srfBunnyTiles = ZL_Surface("Data/lineup.png");
