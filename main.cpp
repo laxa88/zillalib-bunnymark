@@ -1,21 +1,40 @@
 #include "include.h"
 
-#define ZL_OPT_DO_IMPLEMENTATION
-#include <../Opt/ZL_TouchInput.h>
+#include "Bunny.h"
 
-static struct sZillaBunnyMark : public ZL_Application
+ZL_Font fnt;
+ZL_Surface srfBunnyTiles;
+
+struct sZillaBunnyMark : public ZL_Application
 {
-	sZillaBunnyMark() : ZL_Application(60) { }
-
-	virtual void Load(int argc, char *argv[])
+	void Load(int argc, char *argv[])
 	{
-		if (!ZL_Application::LoadReleaseDesktopDataBundle()) return;
-		if (!ZL_Display::Init("Zilla Bunny Mark", 1280, 720, ZL_DISPLAY_ALLOWRESIZEHORIZONTAL)) return;
-		ZL_Display::ClearFill(ZL_Color::White);
-		ZL_Display::SetAA(true);
-		ZL_Audio::Init();
-		ZL_Application::SettingsInit("ZillaBunnyMark");
-		
-		ZL_SceneManager::Init(SCENE_GAME);
+		ZL_Display::Init("Zilla Bunny Mark", 800, 800);
+		ZL_Display::sigPointerDown.connect(this, &sZillaBunnyMark::onPointerDown);
+		ZL_Display::sigPointerUp.connect(this, &sZillaBunnyMark::onPointerUp);
+		ZL_Display::SetAA(false);
+
+		ZL_Input::Init();
+
+		fnt = ZL_Font("Data/gbfont.png");
+		srfBunnyTiles = ZL_Surface("Data/lineup.png");
+		srfBunnyTiles.SetTextureFilterMode(false, false);
+		srfBunnyTiles.SetTilesetClipping(35, 36);
+	}
+
+	void AfterFrame()
+	{
+		ZL_Display::ClearFill(ZL_Color::Gray);
+		fnt.Draw(8, ZLHEIGHT-8, ZL_String::format("Elapsed: %f", ZLSECONDS), ZL_Origin::TopLeft);
+	}
+
+	void onPointerDown(ZL_PointerPressEvent& e)
+	{
+		ZL_LOG("DEBUG", "pointer down");
+	}
+
+	void onPointerUp(ZL_PointerPressEvent& e)
+	{
+		ZL_LOG("DEBUG", "pointer up");
 	}
 } ZillaBunnyMark;

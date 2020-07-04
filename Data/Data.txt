@@ -1,1 +1,0 @@
-store binary resources in this directory
