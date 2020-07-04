@@ -10,9 +10,9 @@ struct Bunny {
 	double dy;
 	double dSpeedX;
 	double dSpeedY;
-	ZL_Rectf rectfBounds;
+	ZL_Rect rectBounds;
 
-	Bunny(int textureIndex, ZL_Rectf &bounds);
+	Bunny(int textureIndex, ZL_Rect &bounds);
 
 	void Update();
 };

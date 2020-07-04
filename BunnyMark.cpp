@@ -3,17 +3,17 @@
 
 ZL_Surface BunnyMark::srfBunnyTiles;
 std::vector<Bunny> BunnyMark::vecBunnies;
-ZL_Rectf BunnyMark::rectfBounds;
+ZL_Rect BunnyMark::rectBounds;
 bool BunnyMark::bAdding;
 int BunnyMark::nCount;
 int BunnyMark::nMaxCount;
 int BunnyMark::nAmount;
 
 void BunnyMark::Init() {
-	rectfBounds.left = 0.0;
-	rectfBounds.high = 0.0;
-	rectfBounds.right = ZLWIDTH;
-	rectfBounds.low = ZLHEIGHT;
+	rectBounds.left = 0.0;
+	rectBounds.top = ZLHEIGHT;
+	rectBounds.right = ZLWIDTH;
+	rectBounds.bottom = 0.0;
 	bAdding = false;
 	nCount = 0;
 	nMaxCount = 200000;
@@ -59,8 +59,8 @@ void BunnyMark::AddBunnies(int count)
 {
 	for (int i = 0; i < count; i++)
     {
-		Bunny bunny{ZL_Rand::Int(12), rectfBounds};
-		bunny.dx = (nCount % 2) * 800;
+		Bunny bunny{ZL_Rand::Int(12), rectBounds };
+		bunny.dx = (nCount % 2) * 800.0;
 		vecBunnies.push_back(bunny);
 		nCount++;
     }

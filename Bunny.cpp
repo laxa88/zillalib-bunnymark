@@ -1,45 +1,45 @@
 #include "Bunny.h"
 
-Bunny::Bunny(int textureIndex, ZL_Rectf &bounds)
+Bunny::Bunny(int textureIndex, ZL_Rect &bounds)
 {
 	nSpriteIndex = 0;
 	dGravity = 0.75;
 	dx = 0.0;
-	dy = 0.0;
+	dy = ZLHEIGHT;
 	dSpeedX = ZL_Rand::Range(0.0, 10.0);
 	dSpeedY = ZL_Rand::Range(0.0, 10.0) - 5.0;
-	rectfBounds = bounds;
+	rectBounds = bounds;
 }
 
 void Bunny::Update()
 {
 	dx += dSpeedX;
-	dy += dSpeedY;
+	dy -= dSpeedY;
 	dSpeedY += dGravity;
 
-	if (dx > rectfBounds.right)
+	if (dx > rectBounds.right)
 	{
 		dSpeedX *= -1;
-		dx = rectfBounds.right;
+		dx = rectBounds.right;
 	}
-	else if (dx < rectfBounds.left)
+	else if (dx < rectBounds.left)
 	{
 		dSpeedX *= -1;
-		dx = rectfBounds.left;
+		dx = rectBounds.left;
 	}
 
-	if (dy > rectfBounds.low)
+	if (dy < rectBounds.bottom)
 	{
 		dSpeedY *= -0.85;
-		dy = rectfBounds.low;
+		dy = rectBounds.bottom;
 		if (ZL_Rand::Range(0.0, 1.0) > 0.5)
 		{
 			dSpeedY -= ZL_Rand::Range(0.0, 6.0);
 		}
 	}
-	else if (dy < rectfBounds.high)
+	else if (dy > rectBounds.top)
 	{
 		dSpeedY = 0;
-		dy = rectfBounds.high;
+		dy = rectBounds.top;
 	}
 }

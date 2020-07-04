@@ -8,7 +8,7 @@ struct BunnyMark {
 	static ZL_Surface srfBunnyTiles;
 
 	static std::vector<Bunny> vecBunnies;
-	static ZL_Rectf rectfBounds;
+	static ZL_Rect rectBounds;
 	static bool bAdding;
 	static int nCount;
 	static int nMaxCount;
