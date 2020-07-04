@@ -43,7 +43,3 @@ void Bunny::Update()
 		dy = rectfBounds.high;
 	}
 }
-
-void Bunny::Draw()
-{
-}

@@ -15,7 +15,6 @@ struct Bunny {
 	Bunny(int textureIndex, ZL_Rectf &bounds);
 
 	void Update();
-	void Draw();
 };
 
 #endif
