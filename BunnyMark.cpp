@@ -19,7 +19,7 @@ void BunnyMark::Init(int startBunnyCount) {
 	nMaxCount = 200000;
 	nAmount = 100;
 
-	srfBunnyTiles = ZL_Surface("Data/lineup.png");
+	srfBunnyTiles = ZL_Surface("Data/lineup-fixed.png");
 	srfBunnyTiles.SetTextureFilterMode(false, false);
 	srfBunnyTiles.SetTilesetClipping(12, 1);
 	nCount = 0;
