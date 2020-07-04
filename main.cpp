@@ -27,7 +27,7 @@ struct sZillaBunnyMark : public ZL_Application
 	void AfterFrame()
 	{
 		ZL_Display::ClearFill(ZL_Color::Gray);
-		fnt.Draw(8, ZLHEIGHT-8, ZL_String::format("Elapsed: %f\nBunnies: %d", ZLSECONDS, BunnyMark::nBunnies), ZL_Origin::TopLeft);
+		fnt.Draw(8, ZLHEIGHT-8, ZL_String::format("Elapsed: %f\nBunnies: %d", ZLSECONDS, BunnyMark::nCount), ZL_Origin::TopLeft);
 	}
 
 	void onPointerDown(ZL_PointerPressEvent& e)

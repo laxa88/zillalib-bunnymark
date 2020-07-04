@@ -2,18 +2,23 @@
 #include "Bunny.h"
 
 ZL_Surface BunnyMark::srfBunnyTiles;
-int BunnyMark::nBunnies;
+std::vector<Bunny> BunnyMark::vecBunnies;
+ZL_Rectf BunnyMark::rectfBounds;
+bool BunnyMark::bAdding;
+int BunnyMark::nCount;
+int BunnyMark::nMaxCount;
+int BunnyMark::nAmount;
 
 void BunnyMark::Init() {
 	srfBunnyTiles = ZL_Surface("Data/lineup.png");
 	srfBunnyTiles.SetTextureFilterMode(false, false);
 	srfBunnyTiles.SetTilesetClipping(35, 36);
-	nBunnies = 0;
+	nCount = 0;
 }
 
 void BunnyMark::Update()
 {
-	nBunnies += 1;
+	nCount += 1;
 }
 
 void BunnyMark::Draw()
