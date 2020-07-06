@@ -31,6 +31,9 @@ struct sZillaBunnyMark : public ZL_Application
 	{
 		ZL_Display::ClearFill(ZL_Color::White);
 		fnt.Draw(8, ZLHEIGHT - 8, ZL_String::format("Bunnies: %d", BunnyMark::nCount), ZL_Origin::TopLeft);
+		if (ZL_Application::Ticks > 1000) {
+			fnt.Draw(8, ZLHEIGHT - 16, ZL_String::format("FPS: %d - AVGFPS: %d", FPS, FrameCount / (Ticks / 1000)), ZL_Origin::TopLeft);
+		}
 		BunnyMark::Draw();
 	}
 
