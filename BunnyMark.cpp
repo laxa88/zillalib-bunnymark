@@ -12,8 +12,8 @@ int BunnyMark::nAmount;
 void BunnyMark::Init(int startBunnyCount)
 {
 	rectBounds.left = 0;
-	rectBounds.top = ZLHEIGHT;
-	rectBounds.right = ZLWIDTH;
+	rectBounds.top = (int)ZLHEIGHT;
+	rectBounds.right = (int)ZLWIDTH;
 	rectBounds.bottom = 0;
 	bAdding = false;
 	nCount = 0;

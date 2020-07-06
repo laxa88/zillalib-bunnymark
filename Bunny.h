@@ -6,11 +6,11 @@
 struct Bunny
 {
 	int nSpriteIndex;
-	double dGravity;
-	double dx;
-	double dy;
-	double dSpeedX;
-	double dSpeedY;
+	float dGravity;
+	float dx;
+	float dy;
+	float dSpeedX;
+	float dSpeedY;
 	ZL_Rect rectBounds;
 
 	Bunny(int textureIndex, ZL_Rect &bounds);
