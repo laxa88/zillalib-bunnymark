@@ -3,7 +3,8 @@
 #ifndef __BUNNY__
 #define __BUNNY__
 
-struct Bunny {
+struct Bunny
+{
 	int nSpriteIndex;
 	double dGravity;
 	double dx;

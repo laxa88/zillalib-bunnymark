@@ -4,7 +4,8 @@
 #ifndef __BUNNYMARK__
 #define __BUNNYMARK__
 
-struct BunnyMark {
+struct BunnyMark
+{
 	static ZL_Surface srfBunnyTiles;
 
 	static std::vector<Bunny> vecBunnies;
